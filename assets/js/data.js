@@ -7,13 +7,15 @@ $(document).ready(function() {
         success: function (msg) {
             data=jQuery.parseJSON(msg)
             
+           
+           
             data.forEach((item, index) => {
-                $(".owl-carousel").append(' <div class="single_slider  d-flex align-items-center slider_bg_1 overlay"><div class="container"><div class="row align-items-center"><div class="col-xl-12 col-md-12"><div class="slider_text text-center"></div>')
-                $(".owl-carousel").append('  <h3>'+item[1]+'</h3>')
-                $(".owl-carousel").append('  <p>une petite description service 1</p>')
-                $(".owl-carousel").append('   <a href="#" class="boxed-btn3">Plus d\'informations</a></div></div></div></div></div>')
-               
+              $(".services").append('<div class="col-lg-4 col-md-6"><div class="single_place"><div class="thumb"><img src="../img/place/1.png" alt=""> </div> <div class="place_info"> <a><h3 onclick="displayService('+item[0]+')">'+item[1]+'</h3></a><p>'+item[2]+'</p><div class="rating_days d-flex justify-content-between"><div class="days"><a href="#">Lire la suite</a></div> </div></div> </div></div>')
+            
               })
             
         }})
 })
+function displayService(service) {
+    window.location.href="./service.php?"+service
+}
