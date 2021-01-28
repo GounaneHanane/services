@@ -16,6 +16,12 @@ $(document).ready(function() {
                 count++
                
               })
+              data.forEach((item, index) => {
+              $("#menu_service").append('<li><a href="'+window.location.origin+"/services/front-end/service.php?"+item[0]+'"> '+item[1]+'</a></li>')
+                count++
+               
+              })
+              
             
         }})
 })
