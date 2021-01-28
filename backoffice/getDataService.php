@@ -37,7 +37,7 @@ if (isset($_POST['action'])) {
             echo "success";
         else echo "error"; 
     }else if ($_POST['action'] == 'delete') {
-        $query = "delete from serice where id=".$_POST['idService'];
+        $query = "delete from serice where id=".$_POST['data'];
         $query_result = $connection->query($query);
          if ($query_result == true)
             echo "success";
