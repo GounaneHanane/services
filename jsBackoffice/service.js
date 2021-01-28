@@ -1,4 +1,8 @@
+
+if(sessionStorage.getItem("login")==null)
+window.location.href="../backoffice/login.php"
 $(document).ready(function () {
+
   $.ajax({
     url: "../backoffice/getDataService.php",
     type: "POST",
@@ -17,7 +21,7 @@ $(document).ready(function () {
         else $("#service-table").append("<td></td>");
         if (service[4] != null)
           $("#service-table").append(
-            "<td><img src='" + service[4] + "' width='100' height='100'/></td>"
+            "<td><img src='"+window.location.origin+'/services/' + service[4] + "' width='100' height='100'/></td>"
           );
         else $("#service-table").append("<td></td>");
 
@@ -32,11 +36,21 @@ $(document).ready(function () {
     },
   });
   $("#btn-edit").click(function (e) {
+    uploadImageResult=uploadFile( $("#serviceImage"));
+    if(uploadImageResult=="success") {
+     
+        var media
+       if($("#serviceImage")[0].files[0]==undefined)
+          {  media=""
+            $("#serviceImage").attr("disabled",true) }
+        else media='img/service/'+ $("#serviceImage")[0].files[0].name
+       
     var arr = {
       nomService: $("#nomService").val(),
       petiteDescription: $("#petiteDescription").val(),
       description: $("#description").val(),
       serviceId: window.location.search.substring(1).split("?")[0],
+      media:media
     };
     $.ajax({
       url: "../backoffice/getDataService.php",
@@ -59,17 +73,27 @@ $(document).ready(function () {
           );
         }
       },
-    });
+    });}
     e.preventDefault();
   });
   $("#add-service").click(function () {
     window.location.href = "../backoffice/addService.php";
   });
   $("#btn-add").click(function (e) {
+    uploadImageResult=uploadFile( $("#serviceImage"));
+    if(uploadImageResult=="success") {
+     
+        var media
+       if($("#serviceImage")[0].files[0]==undefined)
+          {  media=""
+            $("#serviceImage").attr("disabled",true) }
+        else media='img/service/'+ $("#serviceImage")[0].files[0].name
+       
     var arr = {
       nomService: $("#nomService").val(),
       petiteDescription: $("#petiteDescription").val(),
       description: $("#description").val(),
+      media:media
     };
     $.ajax({
       url: "../backoffice/getDataService.php",
@@ -93,8 +117,15 @@ $(document).ready(function () {
         }
       },
     });
+  } else {
+    $(".clearfix").html("");
+    $(".clearfix").append(
+      '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button><span> Merci d\'entrer une image valide</span></div>'
+    );
+  }
     e.preventDefault();
   });
+
 });
 
 function modiferServiceForm(idservice) {
@@ -127,3 +158,36 @@ function deleteService(idservice) {
   }
    
 }
+function uploadFile(imageFile){
+ 
+  var result="success"
+
+  var input = imageFile;
+  file = input[0].files[0];
+  if(file != undefined){
+    formData= new FormData();
+    if(!!file.type.match(/image.*/)){
+      formData.append("image", file);
+      
+      $.ajax({
+        url: "../saveImage.php",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            
+           
+        },error: function(msg){
+          alert(msg)
+        }
+      });
+    }else{
+      result = 'Not a valid image!';
+    }
+  
+   
+  }
+  return result
+}
+
