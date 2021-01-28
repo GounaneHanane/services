@@ -49,9 +49,7 @@
 <ul id="navigation">
 <li><a class="active" href="index.php">Acceuil</a></li>
 <li><a href="#">Services </a>
-<ul class="submenu">
-<li><a href="service.php">Service 1</a></li>
-<li><a href="service.php">Service 2</a></li>
+<ul class="submenu" id="menu_service">
 </ul>
 </li>
 <li><a href="about.php">A propos</a>
