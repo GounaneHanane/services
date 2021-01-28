@@ -17,7 +17,7 @@ $(document).ready(function() {
                
               })
               data.forEach((item, index) => {
-              $("#menu_service").append('<li><a href="'+window.location.href+"service.php?"+item[0]+'"> '+item[1]+'</a></li>')
+              $("#menu_service").append('<li><a href="'+window.location.origin+"/services/front-end/service.php?"+item[0]+'"> '+item[1]+'</a></li>')
                 count++
                
               })
