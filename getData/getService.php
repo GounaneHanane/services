@@ -15,6 +15,11 @@ if(isset($_POST["action"])) {
         $query_result = $connection->query($query);
         $array = mysqli_fetch_all($query_result);
         echo json_encode($array);
+    } else if($_POST["action"]=="display_service") {
+        $query="select * from serice where id=".$_POST['idService'];
+        $query_result = $connection->query($query);
+        $array = mysqli_fetch_all($query_result);
+        echo json_encode($array);
     }
 
 }

@@ -6,8 +6,9 @@ $(document).ready(function() {
         async: false,
         success: function (msg) {
             data=jQuery.parseJSON(msg)
-            
-          
+            $('#libelle').html(data[0][1])
+            $('#petite_desc').html(data[0][2])
+            $('#desc').html(data[0][3])
             
         }})
 })

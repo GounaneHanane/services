@@ -21,3 +21,5 @@
 </div>
 </div>
 <?php require("./footer.php"); ?>
+
+<script src="../assets/js/service.js"></script>
