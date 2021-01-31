@@ -5,8 +5,17 @@ $(document).ready(function () {
     async: false,
     data: { action: "displayData" },
     success: function (msg) {
+	console.log(JSON.parse(msg))
       var data = JSON.parse(msg);
-      data.forEach((service) => {
+      $("#table").DataTable({
+        data:JSON.parse(msg),
+        columns:[
+          {title:"Service", data:1},
+          {title:"Petite description",data:2},
+          {title:"Image",data:4}
+        ]
+      })
+   /*   data.forEach((service) => {
         $("#service-table").append("<tr>");
 
         if (service[1] != null)
@@ -26,7 +35,7 @@ $(document).ready(function () {
             service[0] +
             ')"><span class="material-icons">create</span></button></td></tr>'
         );
-      });
+      });*/
     },
   });
   $("#btn-edit").click(function (e) {

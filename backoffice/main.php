@@ -2,6 +2,10 @@
 require("header.php");
 require("menu.php");
 ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+ 
 <script src="../jsBackoffice/service.js"></script>
 
 <div class="content">
@@ -36,7 +40,7 @@ require("menu.php");
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="table">
                                     <thead class=" text-primary">
                                         <th>
                                             Service
