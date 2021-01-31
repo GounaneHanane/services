@@ -7,6 +7,7 @@ $(document).ready(function () {
       data: { email: $("#email").val(), password: $("#password").val() },
       success: function (msg) {
         if (msg == "correct") {
+          sessionStorage.setItem("login", $("#email").val());
           window.location.href = "main.php";
         } else {
           $("#notification").html("");

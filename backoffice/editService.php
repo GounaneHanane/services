@@ -42,12 +42,12 @@ require("menu.php");
                     <input id="nomService" type="text" class="form-control" required>
                   </div>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4"><div class="form-group"> <label class="bmd-label-floating">Photo Service</label>
+                    <img id="output" src='' width='100' height='100' /></div></div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">photo Service</label>
-                    <img src='' width='100' height='100' />
-                    <input type="file" class="form-control pull-right" id="serviceImage" name="filename">
+                   
+                    <input onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" type="file" class="form-control pull-right" id="serviceImage" name="filename">
 
                   </div>
                 </div>
@@ -58,7 +58,7 @@ require("menu.php");
 
                   <div class="form-group">
                     <label class="bmd-label-floating">Petite description</label>
-                    <textarea id="petiteDescription" rows="3" class="form-control" required></textarea>
+                    <textarea maxlength="80" id="petiteDescription" rows="3" class="form-control" required></textarea>
                   </div>
                 </div>
 
