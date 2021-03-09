@@ -3,6 +3,8 @@ require("header.php");
 require("menu.php");
 ?>
 <script src="../jsBackoffice/service.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'#description' });</script>
 <script>
   $(document).ready(function() {
     $.ajax({
@@ -20,6 +22,7 @@ require("menu.php");
         $('#description').val(data[0][3])
 
       }
+      
     })
 
   })

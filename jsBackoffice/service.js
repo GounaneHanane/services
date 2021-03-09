@@ -42,6 +42,7 @@ $(document).ready(function () {
     },
   });
   $("#btn-edit").click(function (e) {
+   
     uploadImageResult = uploadFile($("#serviceImage"));
     if (uploadImageResult == "success") {
       var media;
@@ -53,7 +54,7 @@ $(document).ready(function () {
       var arr = {
         nomService: $("#nomService").val(),
         petiteDescription: $("#petiteDescription").val(),
-        description: $("#description").val(),
+        description:tinyMCE.get('description').getContent(),
         serviceId: window.location.search.substring(1).split("?")[0],
         media: media,
       };
@@ -97,7 +98,7 @@ $(document).ready(function () {
       var arr = {
         nomService: $("#nomService").val(),
         petiteDescription: $("#petiteDescription").val(),
-        description: $("#description").val(),
+        description: tinyMCE.get('description').getContent(),
         media: media,
       };
       $.ajax({

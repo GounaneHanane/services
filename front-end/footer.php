@@ -1,7 +1,7 @@
 
 <footer class="footer">
 <div class="footer_top">
-<div class="container">
+<div class="container" style="max-width:87%">
 <div class="row">
 <div class="col-xl-4 col-md-6 col-lg-4 ">
 <div class="footer_widget">
@@ -45,73 +45,30 @@
 </div>
 </div>
 </div>
-<div class="col-xl-2 col-md-6 col-lg-2">
+<div class="col-xl-5 col-md-6 col-lg-5">
 <div class="footer_widget">
 <h3 class="footer_title">
 Company
 </h3>
-<ul class="links">
-<li><a href="#">Pricing</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#"> Gallery</a></li>
-<li><a href="#"> Contact</a></li>
+<ul class="links double_links" id="services-footer">
+
 </ul>
 </div>
 </div>
 <div class="col-xl-3 col-md-6 col-lg-3">
 <div class="footer_widget">
 <h3 class="footer_title">
-Popular destination
+Lien Rapide
  </h3>
-<ul class="links double_links">
-<li><a href="#">Indonesia</a></li>
-<li><a href="#">America</a></li>
-<li><a href="#">India</a></li>
-<li><a href="#">Switzerland</a></li>
-<li><a href="#">Italy</a></li>
-<li><a href="#">Canada</a></li>
-<li><a href="#">Franch</a></li>
-<li><a href="#">England</a></li>
+<ul class="links ">
+<li><a href="#">Acceuil</a></li>
+<li><a href="#">A propos</a></li>
+<li><a href="#">Contactez-nous</a></li>
+
 </ul>
 </div>
 </div>
-<div class="col-xl-3 col-md-6 col-lg-3">
-<div class="footer_widget">
-<h3 class="footer_title">
-Instagram
-</h3>
-<div class="instagram_feed">
-<div class="single_insta">
-<a href="#">
-<img src="../img/instagram/1.png" alt="">
-</a>
-</div>
-<div class="single_insta">
-<a href="#">
-<img src="../img/instagram/2.png" alt="">
-</a>
-</div>
-<div class="single_insta">
-<a href="#">
-<img src="../img/instagram/3.png" alt="">
-</a>
-</div>
-<div class="single_insta">
-<a href="#">
-<img src="../img/instagram/4.png" alt="">
-</a>
-</div>
-<div class="single_insta">
-<a href="#">
-<img src="../img/instagram/5.png" alt="">
-</a>
-</div>
-<div class="single_insta">
-<a href="#">
-<img src="../img/instagram/6.png" alt="">
-</a>
-</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -165,7 +122,6 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 <script src="../assets/js/plugins.js"></script>
 <script src="../assets/js/gijgo.min.js"></script>
 <script src="../assets/js/slick.min.js"></script>
-
 <script src="../assets/js/contact.js"></script>
 <script src="../assets/js/jquery.ajaxchimp.min.js"></script>
 <script src="../assets/js/jquery.form.js"></script>

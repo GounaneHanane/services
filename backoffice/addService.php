@@ -3,6 +3,8 @@ require("header.php");
 require("menu.php");
 ?>
 <script src="../jsBackoffice/service.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'#description' });</script>
 <div class="content">
     <div class="clearfix"></div>
     <div class="container-fluid">
@@ -45,7 +47,13 @@ require("menu.php");
 
                             <div class="form-group">
                                 <label class="bmd-label-floating">Description</label>
-                                <textarea id="description" rows="6" class="form-control" required></textarea>
+                                <textarea id="description" name="description" rows="6" class="form-control" required></textarea>
+                                <script>
+                                    $(document).ready(function(){
+                                        CKEDITOR.replace( 'description' );
+
+                                    })
+                                </script>
                             </div>
                         </div>
 
